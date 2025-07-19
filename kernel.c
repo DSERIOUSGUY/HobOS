@@ -26,7 +26,6 @@ void heartbeat(void)
 {
 
 	queue_on_proc((uint64_t) test_print1, 0);
-	unlock_mutex(&x);
 
 	lock_mutex(&x);
 	kprintf("mutex:%d *\n", get_mutex_state(&x));
@@ -41,16 +40,12 @@ void main()
 	get_rpi_version();
 	mmio_init();
 	init_console();
-<<<<<<< HEAD
-	init_smp();
-=======
 	init_gpio();
 
 	debug_led_on(RED);
 
 	init_smp();
 	debug_led_on(GREEN);
->>>>>>> c67459a (debug: Adding gpio debug)
 
 	heartbeat();
 
