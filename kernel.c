@@ -4,6 +4,9 @@
 #include "hobos/mmio.h"
 #include "hobos/smp.h"
 #include "hobos/mutex.h"
+#include "hobos/lib/thread.h"
+#include "hobos/lib/task.h"
+#include "hobos/debug.h"
 
 void test_print1(void)
 {
@@ -38,7 +41,16 @@ void main()
 	get_rpi_version();
 	mmio_init();
 	init_console();
+<<<<<<< HEAD
 	init_smp();
+=======
+	init_gpio();
+
+	debug_led_on(RED);
+
+	init_smp();
+	debug_led_on(GREEN);
+>>>>>>> c67459a (debug: Adding gpio debug)
 
 	heartbeat();
 

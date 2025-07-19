@@ -1,6 +1,6 @@
 #include "hobos/gpio.h"
 
-uint64_t gpio_base;
+uint64_t gpio_base = 0;
 extern uint8_t rpi_version;
 
 inline void init_gpio(void)
